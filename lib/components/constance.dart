@@ -5,4 +5,7 @@ const defaultColor = Colors.blue;
 
 String token = '';
 
-void signOut(context) => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => ShopLoginScreen(),), (route) => false);
+void signOut(context) =>
+    Navigator.pushAndRemoveUntil(
+        context, MaterialPageRoute(builder: (context) => ShopLoginScreen(),), (
+        route) => false);
