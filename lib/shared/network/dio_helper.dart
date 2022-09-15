@@ -8,6 +8,10 @@ class DioHelper{
       BaseOptions(
         baseUrl:  'https://student.valuxapps.com/api/',
         receiveDataWhenStatusError: true,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
+        }
       )
     );
   }

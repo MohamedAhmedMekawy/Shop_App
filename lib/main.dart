@@ -86,7 +86,6 @@ class MyApp extends StatelessWidget {
                   type: BottomNavigationBarType.fixed,
                   selectedItemColor: Colors.blue,
                   unselectedItemColor: Colors.grey,
-
                 )
             ),
             darkTheme: ThemeData(
@@ -94,7 +93,12 @@ class MyApp extends StatelessWidget {
                 scaffoldBackgroundColor: HexColor('333739'),
                 primarySwatch: Colors.blue,
               backgroundColor: Colors.red,
+              cardTheme: CardTheme(
+                 color: Colors.grey[800]
+              ),
+
               appBarTheme: AppBarTheme(
+                elevation: 0,
                     systemOverlayStyle: SystemUiOverlayStyle(
                         statusBarBrightness: Brightness.light,
                         statusBarColor: HexColor('333739')
@@ -107,17 +111,17 @@ class MyApp extends StatelessWidget {
                 bottomNavigationBarTheme: BottomNavigationBarThemeData(
                   backgroundColor: HexColor('333739'),
                   elevation: 0,
-                  selectedItemColor: Colors.deepOrange,
+                  selectedItemColor: Colors.blue,
                   unselectedItemColor: Colors.grey,
                   type: BottomNavigationBarType.fixed,
                 ),
-                textTheme: TextTheme(
-                    bodyText1: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: Colors.white
-                    )
+              textTheme: TextTheme(
+                bodyText2: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
                 ),
+              ),
             ),
             themeMode: AppCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
             home: startWidget,

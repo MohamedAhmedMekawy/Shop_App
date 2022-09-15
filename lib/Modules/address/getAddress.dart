@@ -74,36 +74,43 @@ class AddressesScreen extends StatelessWidget {
               Icon(Icons.location_on_outlined,color: Colors.green,),
               SizedBox(width: 5,),
               Text (model.name!,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-              Spacer(),
+           SizedBox(
+             width: 10,
+           ),
               TextButton(
                   onPressed: (){
                     ShopLayoutCubit.get(context).deleteAddress(addressId: model.id);
                   },
-                  child: Row(children:
-                  [
-                    Icon(Icons.delete_outline,size: 17,),
-                    Text('Delete')
-                  ],)
+                  child: Expanded(
+                    child: Row(children:
+                    [
+                      Icon(Icons.delete_outline,size: 17,),
+                      Text('Delete')
+                    ],),
+                  )
               ),
               Container(height: 20,width: 1,color: Colors.grey[300],),
-              TextButton(
-                  onPressed: (){
-                    navigateTo(context, AddOrUpDateAddress(
-                      isEdit: true,
-                      addressId: model.id,
-                      name: model.name,
-                      city: model.city,
-                      region: model.region,
-                      details: model.details,
-                      notes: model.notes,
-                    ));
-                  },
-                  child: Row(children:
-                  [
-                    Icon(Icons.edit,size: 17,color: Colors.grey,),
-                    Text('Edit',style: TextStyle(color: Colors.grey),)
-                  ],)
+              Expanded(
+                child: TextButton(
+                    onPressed: (){
+                      navigateTo(context, AddOrUpDateAddress(
+                        isEdit: true,
+                        addressId: model.id,
+                        name: model.name,
+                        city: model.city,
+                        region: model.region,
+                        details: model.details,
+                        notes: model.notes,
+                      ));
+                    },
+                    child: Row(children:
+                    [
+                      Icon(Icons.edit,size: 17,color: Colors.grey,),
+                      Text('Edit',style: TextStyle(color: Colors.grey),)
+                    ],)
+                ),
               ),
+
 
 
             ],
